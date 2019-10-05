@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Puzzle</title>
+    {{!-- <link rel="stylesheet" href="puzzle.css"> --}}
+    {{!-- <link rel="stylesheet" href="puzzle.js"> --}}
+    <link rel="icon" type="image/jpg" href="https://ak2.picdn.net/shutterstock/videos/1185382/thumb/1.jpg">
+</head>
+
+<style>
+  body{
+    background-color:#2b2c2c!important;
+}
+img{
+    height: 12rem;
+    width: 12rem;
+    cursor: pointer;
+}
+img:hover{
+    border: 5px solid black;
+    
+} 
+</style>
+
+
+<body>
+  <h1>Puzzle</h1>  
+  <img src="owl1.jpg" id="owl1" alt="">
+  <img src="/views/owl2.jpg" id="owl2" alt="">
+  <img src="owl3.jpg" id="owl3" alt="check"> <br>
+  <img src="owl4.jpg" id="owl4" alt="">
+  <img src="owl5.jpg" id="owl5" alt="">
+  <img src="owl6.jpg" id="owl6" alt=""> <br>
+  <img src="owl7.jpg" id="owl7" alt="">
+  <img src="owl8.jpg" id="owl8" alt="">
+  <img src="owl9.jpg" id="owl8" alt="">
+<button id="but">click</button>
+</body>
+
+<script>
+  import { builtinModules } from "module";
+
+window.onload = function(){
+    var owl1 = document.getElementById("owl1");
+    var owl2 = document.getElementById("owl2");
+
+   
+    // swap(owl1,owl2);
+
+    but.onclick =  function swap(owl1,owl2){
+        var temp = a;
+        a = b;
+        b = temp;
+        console.log("clicked!!!")
+    }
+} 
+
+</script>
+
+
+</html>

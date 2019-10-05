@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>play</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {{!-- <link rel="stylesheet" href="index.css"> --}}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="https://cdn4.iconfinder.com/data/icons/free-game-icons/64/Devil.png">
+    <link href="https://fonts.googleapis.com/css?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    body{
+    background-color:#2b2c2c;
+    color: white;
+    overflow-x: hidden;
+}
+
+.navbar{
+    background-color:#191919;
+}
+.web-name{
+    color: orangered;
+    font: outline;
+    font-size: 3rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+.form-control{
+    background-color: #191919;
+    border-color:orangered;
+}
+.register{
+    background-color: orangered !important;
+}
+.login{
+    color: orangered;
+    border-color: orangered; 
+}
+.login:hover{
+    background-color: orangered;
+}
+.nav-items{
+    margin: 12px;
+}
+
+.my-col{
+    padding: 3rem;
+}
+
+@media only screen and (min-width: 500px){ 
+    .my-col{
+        padding-left: 10rem;
+    }
+}
+
+.card-img-top{
+    height: 11.7rem;
+    border-top-right-radius: 2%;
+    border-top-left-radius: 2%;
+}
+
+
+.game-card{
+    transition: 0.5s;
+    cursor: pointer;
+    height: 14.5rem;
+    border-radius: 3%;
+}
+.game-card1{
+    border: 3px solid orangered;
+}
+.game-card2{
+    border: 3px solid white;
+}
+.game-card3{
+    border: 3px solid blue;
+}
+.game-card4{
+    border: 3px solid rgb(173, 4, 109);
+}
+.game-card5{
+    border: 3px solid yellow;
+}
+.game-card6{
+    border: 3px solid green;
+}
+.game-card1:hover{
+    transform: translate(0px,-15px);
+    box-shadow: 0px 0px 10px 10px orangered;
+}
+.game-card2:hover{
+    transform: translate(0px,-15px);
+    box-shadow: 0px 0px 10px 10px white;
+}
+.game-card3:hover{
+    transform: translate(0px,-15px);
+    box-shadow: 0px 0px 10px 10px blue;
+}
+.game-card4:hover{
+    transform: translate(0px,-15px);
+    box-shadow: 0px 0px 10px 10px rgb(173, 4, 109);
+}
+.game-card5:hover{
+    transform: translate(0px,-15px);
+    box-shadow: 0px 0px 10px 10px yellow;
+}
+.game-card6:hover{
+    transform: translate(0px,-15px);
+    box-shadow: 0px 0px 10px 10px green;
+}
+.game-card:active{
+    box-shadow: none;
+    transform: translate(0px,5px);
+}
+
+
+
+.game-name{
+    height: 2.8rem;
+    text-align: center;
+    font-size: 2rem;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+
+}
+.game-name1{
+    background-color: orangered;
+    color: white;
+}
+.game-name2{
+    background-color: white;
+    color: black;
+}
+.game-name3{
+    background-color: blue;
+    color: white;
+}
+.game-name4{
+    background-color: rgb(173, 4, 109);
+    color: white;
+}
+.game-name5{
+    background-color: yellow;
+    color: black;
+}
+.game-name6{
+    background-color: green;
+    color: white;
+}
+
+
+a, a:visited, a:active, a:hover{
+    text-decoration-line: none;
+}
+
+
+#footer{
+    text-align: center;
+    background-color:#191919;
+    color: white;
+}
+.icon{
+    padding: 10px;
+    cursor: pointer;
+}
+</style>
+
+
+
+<body>
+<!-- Header-Navbar -->
+
+    <nav class="navbar navbar-expand-lg">
+            <img src="https://cdn4.iconfinder.com/data/icons/free-game-icons/64/Devil.png" class="navbar-brand" alt="">
+             <p class="web-name" style="font-family: Saira Stencil One">playlikehell</p> 
+<!-- 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" style="background-color: #191919; border-color:orangered; color: orangered       " data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav" >
+         
+<!-- 
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn my-2 my-sm-0" id="button-addon2" type="submit">  <img src="lensfine.png"> </button>
+          </form> -->
+
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="#">
+                    <button type="button" class="btn btn-danger register  nav-items" data-toggle="modal" data-target="#exampleModalCenter1">Register</button>
+                    <!-- <span class="sr-only">(current)</span> -->
+            </a>
+            </li>
+            <!-- l class="navbar-nav " style="float: right !important;"> -->
+            <li class="nav-item">
+            <a class="nav-link" href="#">
+                    <button type="button" class="btn btn-outline-danger login nav-items" data-toggle="modal" data-target="#exampleModalCenter">Login</button>
+                    <!-- <span class="sr-only">(current)</span> -->
+            </a>
+            </li>
+            <!-- l class="navbar-nav " style="float: right !important;"> -->
+            <li class="nav-item">
+            <!-- <a class="nav-link" href="#"> -->
+                    <a class="nav-link" href="#footer">
+                            <button type="button" class="btn btn-outline-danger login nav-items">Contact Us</button>
+                    </a>
+                    <!-- <span class="sr-only">(current)</span> -->
+            <!-- </a> -->
+            </li>
+           
+          </ul>
+        </div> 
+      </nav>
+ 
+
+<!-- Modal Register-->
+<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="color: orangered">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="background-color: #6d6a6a">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalCenterTitle" style="margin-left:12rem">Register</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <form>
+         <div class="form-group">
+        <label for="">Name</label>                      
+        <input type="text" class="form-control" placeholder="Full name"> <br>
+        <label for="">Gaming name</label>
+        <input type="text" class="form-control" placeholder="eg:snipper;)"> <br>
+        <label for="">Date of Birth</label>
+        <input type="date" class="form-control"> <br>
+        <label for="exampleInputEmail1">Username/Gaming name</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"> <br>
+       <label for="exampleInputPassword1">Password</label>
+       <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> 
+      </div>
+      </form>
+          <button type="button" class="btn register" style="color: white; margin-left:24rem">Signup</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal Login-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="color: orangered">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="background-color: #6d6a6a">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalCenterTitle" style="margin-left:12rem">Login</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+         <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"> <br>
+       <label for="exampleInputPassword1">Password</label>
+       <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+      </form>
+        <button type="button" class="btn register" style="color: white; margin-left:25rem">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- Games -->
+
+      <div class="container"> 
+          <div class="row">
+              <div class="col-md-6 col-sm-12 col-xs-12 my-col">
+                   <div class="game-card game-card1" style="width: 18rem;">
+                              <a href="/dice" target="_blank">    
+                         <img src="https://i.dailymail.co.uk/i/pix/2012/09/13/article-2202616-14FEC4B7000005DC-516_634x420.jpg" class="card-img-top" alt="...">
+                         <div class="game-name game-name1">
+                        <p class="card-text" >Roll the dice</p>
+                          </div>
+                          </a>
+                    </div>
+              </div>
+              {{!-- <div class="col-md-6 col-sm-12 col-xs-12 my-col">
+                    <div class="game-card game-card2" style="width: 18rem;">
+                              <a href="/spinthebottle" target="_blank">    
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/71GKhfVDtsL.png" class="card-img-top" alt="...">
+                          <div class="game-name game-name2">
+                         <p class="card-text" >Spin the Bottle</p>
+                          </div>
+                          </a>
+                    </div>
+               </div> --}}
+               <div class="col-md-6 col-sm-12 col-xs-12 my-col">
+                    <div class="game-card game-card3" style="width: 18rem;">
+                              <a href="/puzzle" target="_blank">    
+                          <img src="https://ak2.picdn.net/shutterstock/videos/1185382/thumb/1.jpg" class="card-img-top" alt="...">
+                          <div class="game-name game-name3">
+                         <p class="card-text" >Puzzles</p>
+                           </div>
+                           </a>
+                     </div>
+               </div>
+               {{!-- <div class="col-md-6 col-sm-12 col-xs-12 my-col">
+                    <div class="game-card game-card4" style="width: 18rem;">
+                              <a href="/quiz" target="_blank">    
+                          <img src="https://i1.wp.com/gonitsora.com/wp-content/uploads/2015/10/shutterstock_237878635-quiz.jpg?fit=1024%2C654&ssl=1" class="card-img-top" alt="...">
+                          <div class="game-name game-name4">
+                         <p class="card-text" >Quiz your interests</p>
+                           </div>
+                           </a>
+                     </div>
+               </div> --}}
+               <div class="col-md-6 col-sm-12 col-xs-12 my-col">
+                    <div class="game-card game-card5" style="width: 18rem;">
+                              <a href="/hypnotizer" target="_blank">    
+                          <img src="https://rlv.zcache.com.au/a_red_and_yellow_kids_sunglasses-r99eb25bba28d489a88e7c8c45905858f_zzxft_307.jpg?rlvnet=1&rvtype=content" class="card-img-top" alt="...">
+                          <div class="game-name game-name5">
+                         <p class="card-text" >Hypnotizer</p>
+                           </div>
+                           </a>
+                     </div>
+               </div> 
+               <div class="col-md-6 col-sm-12 col-xs-12 my-col">
+                    <div class="game-card game-card6" style="width: 18rem;">
+                              <a href="/crossword" target="_blank">    
+                              <img src="https://i.ytimg.com/vi/HvMrOoUeqO0/maxresdefault.jpg"  class="card-img-top" alt="">
+                          {{!-- <img src="https://is2-ssl.mzstatic.com/image/thumb/Purple128/v4/41/c6/a5/41c6a546-c252-ff76-e3ce-23d6850d4709/AppIcon-1x_U007emarketing-85-220-6.png/246x0w.jpg" class="card-img-top" alt="..."> --}}
+                          <div class="game-name game-name6">
+                         <p class="card-text" >Just Type it..</p>
+                           </div>
+                           </a>
+                     </div>
+               </div>
+                                                  
+            </div>
+      </div>
+
+
+
+
+
+
+
+
+<!-- Footer -->
+
+    <div id="footer">
+        <br> 
+            <div class="con">
+                <p class="web-name">
+                    playlikehell 
+                    <img src="https://cdn4.iconfinder.com/data/icons/free-game-icons/64/Devil.png" alt="">
+                </p>
+                
+                <a href="">
+                    <div class="email" style="color: white">
+                        playlikehell@gmail.com
+                    </div>
+                </a>
+        
+                <div class="icons">
+                        <i class="fa fa-facebook-square icon" style="font-size:36px;"></i>
+                        <i class="fa fa-instagram icon" style="font-size:36px; "></i>
+                        <i class="fa fa-envelope icon" style="font-size:36px"></i>
+        
+                    <a href="tel: 9716040900">
+                        <i class="fa fa-phone" style="font-size:36px; color:white"></i>
+                    </a>
+                </div>
+
+                <div class="details">
+                        <i class="fa fa-copyright" style="font-size:15px; color:orangered;"> Bhumika Manocha, Coding Blocks-Pitampura     
+                        </i>
+                </div>
+             </div> <br>
+    </div>
+</body>
+</html>

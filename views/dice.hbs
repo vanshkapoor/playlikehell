@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dice</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <link rel="stylesheet" href="dice.css">
+    <link rel="icon" type="image/jpeg" href="dice.jpeg">
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"></script> -->
+    {{!-- <script src="dice.js"></script> --}}
+</head>
+
+<style>
+    body{
+    background-color:#2b2c2c!important;
+    padding: 4rem;
+}
+
+button{
+    margin-left: 500px;
+    background-color: rgba(248, 16, 35, 0.959) !important;
+}
+
+.my-col{
+    color: wheat;
+    text-align: center;
+    font: outline;
+    font-size: 50px;
+    text-shadow: #509797;
+
+}
+
+.score{
+    background-color: wheat;
+    height: 220px;
+    text-align: center;
+    font-size: 100px;
+    line-height: 200px;
+    box-shadow: 10px 10px -10px 0px wheat;  
+} 
+
+.diceimg{
+    height:200px;
+}
+</style>
+
+
+<body>
+   <div class="container">
+       <div class="row">
+           <div class="col-sm">
+                <button id="dice" class="btn btn-danger">Roll the dice..</button>
+           </div>
+       </div> <br> <br>
+       <div class="row">
+           <div class="col my-col" style="margin-right:17rem ">Player 1</div>
+           <div class="col my-col" style="margin-left: 3rem">Player 2</div>
+       </div> 
+       <div class="row justify-content-around">
+           <div class="col-3 score card" id="player1">0</div>
+            <img src="https://tr.rbxcdn.com/6e437b0096126b75d687376927861693/420/420/Decal/Png" class="diceimg" id="dice1" alt="">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8E9KGD3HSPCCYKTv7E_xRzbCW74WfvYnZi3hBP2xrNvQre8ty" class="diceimg" id="dice2" alt="">
+            <img src="https://cdn.pixabay.com/photo/2013/07/12/17/39/dice-152175_960_720.png" class="diceimg" id="dice3" alt="">
+            <img src="https://www.wpclipart.com/recreation/games/dice/die_face_4.png" class="diceimg" id="dice4" alt="">
+            <img src="https://www.wpclipart.com/recreation/games/dice/die_face_5.png" class="diceimg" id="dice5" alt="">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwmBJ3i-iVZTNcAzSJ_qqD54FKCM9bnmB5rflutC2k8jPwhfCy" class="diceimg" id="dice6" alt="">
+           <div class="col-3 score card" id="player2">00</div>
+        </div> <br> <br> <br> <br>
+            <button id="reset" class="btn btn-danger">Reset</button>
+
+   </div>
+</body>
+
+<script>
+    window.onload = function(){
+        var max = 6;
+        var min = 1;
+        var dice = document.getElementById("dice");
+        var reset = document.getElementById("reset");
+        // var score = document.getElementByClassName("score");
+        // var dice1 = document.getElementById("dice1");
+        // var dice2 = document.getElementById("dice2");
+        var player1 = document.getElementById("player1");
+        var player2 = document.getElementById("player2"); 
+        let flag = 0;
+
+
+        dice1.style.display = 'block';
+        dice2.style.display = 'none';
+        dice3.style.display = 'none';
+        dice4.style.display = 'none';
+        dice5.style.display = 'none';
+        dice6.style.display = 'none';
+
+
+		dice.onclick= function onclickfunc() {
+					var no = (Math.floor(Math.random()*(max-min+1)+min));
+                    console.log(no);
+
+                    if(no == 1){
+                        dice1.style.display = 'block';
+                        dice2.style.display = 'none';
+                        dice3.style.display = 'none';
+                        dice4.style.display = 'none';
+                        dice5.style.display = 'none';
+                        dice6.style.display = 'none';
+                    }
+                    if(no == 2){
+                        dice1.style.display = 'none';
+                        dice2.style.display = 'block';
+                        dice3.style.display = 'none';
+                        dice4.style.display = 'none';
+                        dice5.style.display = 'none';
+                        dice6.style.display = 'none';
+                    }
+                    if(no == 3){
+                        dice1.style.display = 'none';
+                        dice2.style.display = 'none';
+                        dice3.style.display = 'block';
+                        dice4.style.display = 'none';
+                        dice5.style.display = 'none';
+                        dice6.style.display = 'none';
+                    }
+                    if(no == 4){
+                        dice1.style.display = 'none';
+                        dice2.style.display = 'none';
+                        dice3.style.display = 'none';
+                        dice4.style.display = 'block';
+                        dice5.style.display = 'none';
+                        dice6.style.display = 'none';
+                    }
+                    if(no == 5){
+                        dice1.style.display = 'none';
+                        dice2.style.display = 'none';
+                        dice3.style.display = 'none';
+                        dice4.style.display = 'none';
+                        dice5.style.display = 'block';
+                        dice6.style.display = 'none';
+                    }
+                    if(no == 6){
+                        dice1.style.display = 'none';
+                        dice2.style.display = 'none';
+                        dice3.style.display = 'none';
+                        dice4.style.display = 'none';
+                        dice5.style.display = 'none';
+                        dice6.style.display = 'block';
+                    }
+
+
+                    if(flag%2 == 0){
+                        // var player1 = document.getElementById("player1");
+                                {{!-- player1.setAttribute("type","number"); --}}
+                                {{!-- var noo = Number(no); --}}
+                        document.getElementById("player1").textContent += Number(no);
+                        // let sum = player1.reduce(function(acc,item){
+                        //     return acc+item;
+                        // })
+                        // document.getElementById("player1").innerHTML = sum;
+                        flag++;
+                        console.log("flag:"+flag);
+                    }
+
+                    else{
+                        document.getElementById("player2").innerHTML +=no;
+                        flag++;
+                        console.log("flag:"+flag);
+                    }
+
+                    // let sum = no.reduce(function(acc,item){
+                    //     return acc+item;
+                    // })
+
+                    // player1.innerHTML += sum;
+
+                    // const N = dice.value;
+                    // console.log(N);
+
+                    // score.innnerHTML += `<p> ${N} </p>`;
+                }
+		reset.onclick= function onclickfunc() {
+                document.getElementById("player1").textContent = 0;
+                document.getElementById("player2").textContent = 00;
+                dice1.style.display = 'block';
+                dice2.style.display = 'none';
+                dice3.style.display = 'none';
+                dice4.style.display = 'none';
+                dice5.style.display = 'none';
+                dice6.style.display = 'none';   
+        }
+               
+}
+</script>
+
+
+</html> 
