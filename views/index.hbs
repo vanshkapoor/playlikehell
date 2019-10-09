@@ -197,14 +197,14 @@ a, a:visited, a:active, a:hover{
 
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/register" target="_blank">
                     <button type="button" class="btn btn-danger register  nav-items" data-toggle="modal" data-target="#exampleModalCenter1">Register</button>
                     <!-- <span class="sr-only">(current)</span> -->
             </a>
             </li>
             <!-- l class="navbar-nav " style="float: right !important;"> -->
             <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/login" target="_blank">
                     <button type="button" class="btn btn-outline-danger login nav-items" data-toggle="modal" data-target="#exampleModalCenter">Login</button>
                     <!-- <span class="sr-only">(current)</span> -->
             </a>
@@ -224,7 +224,7 @@ a, a:visited, a:active, a:hover{
       </nav>
  
 
-<!-- Modal Register-->
+{{!-- <!-- Modal Register-->
 <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="color: orangered">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content" style="background-color: #6d6a6a">
@@ -235,7 +235,7 @@ a, a:visited, a:active, a:hover{
         </button>
       </div>
       <div class="modal-body">
-       <form>
+       <form action="/register" method="POST">
          <div class="form-group">
         <label for="">Name</label>                      
         <input type="text" class="form-control" placeholder="Full name"> <br>
@@ -243,13 +243,13 @@ a, a:visited, a:active, a:hover{
         <input type="text" class="form-control" placeholder="eg:snipper;)"> <br>
         <label for="">Date of Birth</label>
         <input type="date" class="form-control"> <br>
-        <label for="exampleInputEmail1">Username/Gaming name</label>
+        <label for="exampleInputEmail1">Email address</label>
         <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"> <br>
        <label for="exampleInputPassword1">Password</label>
        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> 
       </div>
       </form>
-          <button type="button" class="btn register" style="color: white; margin-left:24rem">Signup</button>
+          <button type="submit" class="btn register" style="color: white; margin-left:24rem">Signup</button>
       </div>
     </div>
   </div>
@@ -267,7 +267,7 @@ a, a:visited, a:active, a:hover{
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form action="/login" method="POST">
          <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
         <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"> <br>
@@ -281,7 +281,7 @@ a, a:visited, a:active, a:hover{
   </div>
 </div>
 
-
+ --}}
 
 
 

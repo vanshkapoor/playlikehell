@@ -65,7 +65,7 @@ button{
             <img src="https://www.wpclipart.com/recreation/games/dice/die_face_4.png" class="diceimg" id="dice4" alt="">
             <img src="https://www.wpclipart.com/recreation/games/dice/die_face_5.png" class="diceimg" id="dice5" alt="">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwmBJ3i-iVZTNcAzSJ_qqD54FKCM9bnmB5rflutC2k8jPwhfCy" class="diceimg" id="dice6" alt="">
-           <div class="col-3 score card" id="player2">00</div>
+           <div class="col-3 score card" id="player2">0</div>
         </div> <br> <br> <br> <br>
             <button id="reset" class="btn btn-danger">Reset</button>
 
@@ -150,9 +150,12 @@ button{
 
                     if(flag%2 == 0){
                         // var player1 = document.getElementById("player1");
-                                {{!-- player1.setAttribute("type","number"); --}}
-                                {{!-- var noo = Number(no); --}}
-                        document.getElementById("player1").textContent += Number(no);
+                           ///     player1.setAttribute("type","number");
+                              //  var noo = Number(no);
+                              var store1=0;
+                              no=no+store1;
+                        document.getElementById("player1").textContent = no++;
+                         store1=no;
                         // let sum = player1.reduce(function(acc,item){
                         //     return acc+item;
                         // })
@@ -162,7 +165,9 @@ button{
                     }
 
                     else{
-                        document.getElementById("player2").innerHTML +=no;
+                         var store2=0;
+                              no=no+store2;
+                        document.getElementById("player2").innerHTML =no++; store2=no;
                         flag++;
                         console.log("flag:"+flag);
                     }
@@ -180,7 +185,7 @@ button{
                 }
 		reset.onclick= function onclickfunc() {
                 document.getElementById("player1").textContent = 0;
-                document.getElementById("player2").textContent = 00;
+                document.getElementById("player2").textContent = 0;
                 dice1.style.display = 'block';
                 dice2.style.display = 'none';
                 dice3.style.display = 'none';
