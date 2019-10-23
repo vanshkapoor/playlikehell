@@ -8,54 +8,143 @@
     {{!-- <link rel="stylesheet" href="puzzle.css"> --}}
     {{!-- <link rel="stylesheet" href="puzzle.js"> --}}
     <link rel="icon" type="image/jpg" href="https://ak2.picdn.net/shutterstock/videos/1185382/thumb/1.jpg">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <style>
   body{
     background-color:#2b2c2c!important;
 }
-img{
-    height: 12rem;
-    width: 12rem;
+.all{
+    height: 10rem;
+    width: 10rem;
     cursor: pointer;
 }
-img:hover{
+.all:hover{
     border: 5px solid black;
     
 } 
-</style>
+.container{
+  text-align: left
+}
+
+.puz{
+  margin-left: 5rem;
+}
+
+#owl{
+  height: 30rem;
+}
+
+.all{
+  padding-bottom: 0.25rem
+}
+
+.all:active{
+  
+}
+
+
+</style> 
 
 
 <body>
   <h1>Puzzle</h1>  
-  <img src="owl1.jpg" id="owl1" alt="">
-  <img src="/views/owl2.jpg" id="owl2" alt="">
-  <img src="owl3.jpg" id="owl3" alt="check"> <br>
-  <img src="owl4.jpg" id="owl4" alt="">
-  <img src="owl5.jpg" id="owl5" alt="">
-  <img src="owl6.jpg" id="owl6" alt=""> <br>
-  <img src="owl7.jpg" id="owl7" alt="">
-  <img src="owl8.jpg" id="owl8" alt="">
-  <img src="owl9.jpg" id="owl8" alt="">
-<button id="but">click</button>
+  
+{{!-- <img src="{{url('/images/mainowl.jpg')}}" alt="Image"/> --}}
+  {{!-- <img src="/images/mainowl.jpg" alt=""> --}}
+  {{!-- <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+          <img src="/images/owl1.jpg" id="owl1" alt="">
+      </div>
+      <div class="col-md-4">
+        <img src="/images/owl2.jpg" id="owl2" alt="">
+      </div>
+      <div class="col-md-4">
+                <img src="/images/owl3.jpg" id="owl3" alt="check"> 
+
+      </div>
+      <div class="col-md-4">
+              <img src="/images/owl4.jpg" id="owl4" alt="">
+
+      </div>
+      <div class="col-md-4">
+        <img src="/images/owl5.jpg" id="owl5" alt="">
+
+      </div>
+      <div class="col-md-4">
+        <img src="/images/owl6.jpg" id="owl6" alt=""> 
+
+      </div>
+      <div class="col-md-4">
+        <img src="/images/owl7.jpg" id="owl7" alt="">
+
+      </div>
+      <div class="col-md-4">
+        <img src="/images/owl8.jpg" id="owl8" alt="">
+
+      </div>
+      <div class="col-md-4">
+        <img src="/images/owl9.jpg" id="owl8" alt="">
+
+      </div>
+    </div>
+  </div> --}}
+
+<div class="row">
+  <div class="col-md-6">
+  <div class="puz"> 
+    <img src="/images/owl1.jpg" id="owl1" class="all" alt="">
+    <img src="/images/owl2.jpg" id="owl2" class="all" alt="">
+    <img src="/images/owl3.jpg" id="owl3" class="all" alt=""> <br>
+    <img src="/images/owl4.jpg" id="owl4" class="all" alt="">
+    <img src="/images/owl5.jpg" id="owl5" class="all" alt="">
+    <img src="/images/owl6.jpg" id="owl6" class="all" alt=""> <br>
+    <img src="/images/owl7.jpg" id="owl7" class="all" alt="">
+    <img src="/images/owl8.jpg" id="owl8" class="all" alt="">
+    <img src="/images/owl9.jpg" id="owl9" class="all" alt="">
+
+
+  </div>
+</div>
+
+<div class="col-md-6">
+<img src="/images/mainowl.jpg" id="owl" alt="">
+</div>
+</div>
+
+    <form action="">
+      <button id="but" onclick="swap();">click</button>
+    </form>
+
 </body>
 
-<script>
-  import { builtinModules } from "module";
+<script type="text/javascript">
 
 window.onload = function(){
     var owl1 = document.getElementById("owl1");
     var owl2 = document.getElementById("owl2");
 
-   
-    // swap(owl1,owl2);
 
-    but.onclick =  function swap(owl1,owl2){
+    owl1SRC=owl1.src;
+  owl2SRC=owl2.src;
+
+
+function swap(){
+
+  owl1.src=owl2SRC;
+  olw2.src=owl1SRC;
+}
+   
+    {{!-- swap(owl1,owl2);
+
+    but.onclick =  function swap(var a,var b){
         var temp = a;
         a = b;
         b = temp;
         console.log("clicked!!!")
-    }
+    } --}}
 } 
 
 </script>

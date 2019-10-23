@@ -7,6 +7,9 @@
     <title>Dice</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <link rel="stylesheet" href="dice.css">
     <link rel="icon" type="image/jpeg" href="dice.jpeg">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"></script> -->
     {{!-- <script src="dice.js"></script> --}}
 </head>
@@ -15,6 +18,15 @@
     body{
     background-color:#2b2c2c!important;
     padding: 4rem;
+}
+
+#back{
+    height: 20rem;
+    width: 20rem;
+    margin-top: -2rem;
+    background-color: white;
+    {{!-- transform: rotate(45deg); --}}
+    border-radius: 50%;
 }
 
 button{
@@ -42,6 +54,9 @@ button{
 
 .diceimg{
     height:200px;
+    margin: 4rem;   
+    {{!-- transform: rotate(315deg) --}}
+
 }
 </style>
 
@@ -52,22 +67,45 @@ button{
            <div class="col-sm">
                 <button id="dice" class="btn btn-danger">Roll the dice..</button>
            </div>
-       </div> <br> <br>
+
+            <!-- Example single danger button -->
+<div class="btn-group">
+  {{!-- <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" id="highest" aria-haspopup="true" aria-expanded="false">
+    Action
+  </button> --}}
+  <form action="">
+  <select class="dropdown-menu">
+    <option class="dropdown-item" value="20" selected>20</option>
+    <option class="dropdown-item" value="20">20</option>
+    <option class="dropdown-item" value="50">50</option>
+  </select>
+  </form>
+</div>
+
+
+
+
+       </div> <br> 
        <div class="row">
            <div class="col my-col" style="margin-right:17rem ">Player 1</div>
            <div class="col my-col" style="margin-left: 3rem">Player 2</div>
        </div> 
        <div class="row justify-content-around">
            <div class="col-3 score card" id="player1">0</div>
+           <div id="back">
             <img src="https://tr.rbxcdn.com/6e437b0096126b75d687376927861693/420/420/Decal/Png" class="diceimg" id="dice1" alt="">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8E9KGD3HSPCCYKTv7E_xRzbCW74WfvYnZi3hBP2xrNvQre8ty" class="diceimg" id="dice2" alt="">
             <img src="https://cdn.pixabay.com/photo/2013/07/12/17/39/dice-152175_960_720.png" class="diceimg" id="dice3" alt="">
             <img src="https://www.wpclipart.com/recreation/games/dice/die_face_4.png" class="diceimg" id="dice4" alt="">
             <img src="https://www.wpclipart.com/recreation/games/dice/die_face_5.png" class="diceimg" id="dice5" alt="">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwmBJ3i-iVZTNcAzSJ_qqD54FKCM9bnmB5rflutC2k8jPwhfCy" class="diceimg" id="dice6" alt="">
+          </div>
            <div class="col-3 score card" id="player2">0</div>
-        </div> <br> <br> <br> <br>
+        </div> <br> <br> 
             <button id="reset" class="btn btn-danger">Reset</button>
+{{!-- 
+            <div class="win1" style="color: white; height: 1rem">player 1 won</div>
+            <div class="win2" style="color: white; height: 1rem">player 2 won</div> --}}
 
    </div>
 </body>
@@ -76,13 +114,14 @@ button{
     window.onload = function(){
         var max = 6;
         var min = 1;
+        var score1 = 0;
+        var score2 = 0;
         var dice = document.getElementById("dice");
         var reset = document.getElementById("reset");
-        // var score = document.getElementByClassName("score");
-        // var dice1 = document.getElementById("dice1");
-        // var dice2 = document.getElementById("dice2");
         var player1 = document.getElementById("player1");
         var player2 = document.getElementById("player2"); 
+        var win1 = document.getElementById("win1"); 
+        var win2 = document.getElementById("win2"); 
         let flag = 0;
 
 
@@ -93,10 +132,13 @@ button{
         dice5.style.display = 'none';
         dice6.style.display = 'none';
 
+        win1.style.display = 'none';
+        win2.style.display = 'none';
+
 
 		dice.onclick= function onclickfunc() {
-					var no = (Math.floor(Math.random()*(max-min+1)+min));
-                    console.log(no);
+					let no = (Math.floor(Math.random()*(max-min+1)+min));
+                    console.log("no : " + no);
 
                     if(no == 1){
                         dice1.style.display = 'block';
@@ -152,10 +194,9 @@ button{
                         // var player1 = document.getElementById("player1");
                            ///     player1.setAttribute("type","number");
                               //  var noo = Number(no);
-                              var store1=0;
-                              no=no+store1;
-                        document.getElementById("player1").textContent = no++;
-                         store1=no;
+                        score1 +=no;
+                        document.getElementById("player1").textContent = score1;
+                        console.log("score1 : " + score1);
                         // let sum = player1.reduce(function(acc,item){
                         //     return acc+item;
                         // })
@@ -165,33 +206,41 @@ button{
                     }
 
                     else{
-                         var store2=0;
-                              no=no+store2;
-                        document.getElementById("player2").innerHTML =no++; store2=no;
+                         score2 += no;
+                        document.getElementById("player2").textContent = score2;
+                        console.log("score2 : " + score2);
                         flag++;
                         console.log("flag:"+flag);
                     }
 
-                    // let sum = no.reduce(function(acc,item){
-                    //     return acc+item;
-                    // })
+                    if(score1>=10)
+                    {
+                        console.log("player 1 won!")
+                        {{!-- win1.style.display = 'block'; --}}
+                    }
+ 
+                    else if(score2>=10)
+                    {
+                        console.log("player 2 won!")
+                        {{!-- win2.style.display = 'block'; --}}
+                    }
 
-                    // player1.innerHTML += sum;
 
-                    // const N = dice.value;
-                    // console.log(N);
-
-                    // score.innnerHTML += `<p> ${N} </p>`;
                 }
 		reset.onclick= function onclickfunc() {
                 document.getElementById("player1").textContent = 0;
                 document.getElementById("player2").textContent = 0;
+                score1=0;
+                score2=0;
+                flag=0;
                 dice1.style.display = 'block';
                 dice2.style.display = 'none';
                 dice3.style.display = 'none';
                 dice4.style.display = 'none';
                 dice5.style.display = 'none';
-                dice6.style.display = 'none';   
+                dice6.style.display = 'none'; 
+                win1.style.display = 'none';
+                win2.style.display = 'none';  
         }
                
 }
