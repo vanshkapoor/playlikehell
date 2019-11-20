@@ -103,15 +103,16 @@ button{
            <div class="col-3 score card" id="player2">0</div>
         </div> <br> <br> 
             <button id="reset" class="btn btn-danger">Reset</button>
-{{!-- 
-            <div class="win1" style="color: white; height: 1rem">player 1 won</div>
-            <div class="win2" style="color: white; height: 1rem">player 2 won</div> --}}
 
+            {{!-- <div class="win1" style="color: white; height: 1rem">player 1 won</div>
+            <div class="win2" style="color: white; height: 1rem">player 2 won</div> --}}
+            {{!-- USE CLASS TO GIVE STYLES  --------------------------------------------------------------------------------ERROR WAS HERE --}}
    </div>
 </body>
 
 <script>
     window.onload = function(){
+        console.log("checcck")
         var max = 6;
         var min = 1;
         var score1 = 0;
@@ -124,6 +125,13 @@ button{
         var win2 = document.getElementById("win2"); 
         let flag = 0;
 
+        var dice1 = document.getElementById("dice1")
+        var dice2 = document.getElementById("dice2")
+        var dice3 = document.getElementById("dice3")
+        var dice4 = document.getElementById("dice4")
+        var dice5 = document.getElementById("dice5")
+        var dice6 = document.getElementById("dice6")
+
 
         dice1.style.display = 'block';
         dice2.style.display = 'none';
@@ -132,8 +140,8 @@ button{
         dice5.style.display = 'none';
         dice6.style.display = 'none';
 
-        win1.style.display = 'none';
-        win2.style.display = 'none';
+        {{!-- win1.style.display = 'none';
+        win2.style.display = 'none'; --}}
 
 
 		dice.onclick= function onclickfunc() {
@@ -213,18 +221,6 @@ button{
                         console.log("flag:"+flag);
                     }
 
-                    if(score1>=10)
-                    {
-                        console.log("player 1 won!")
-                        {{!-- win1.style.display = 'block'; --}}
-                    }
- 
-                    else if(score2>=10)
-                    {
-                        console.log("player 2 won!")
-                        {{!-- win2.style.display = 'block'; --}}
-                    }
-
 
                 }
 		reset.onclick= function onclickfunc() {
@@ -239,8 +235,8 @@ button{
                 dice4.style.display = 'none';
                 dice5.style.display = 'none';
                 dice6.style.display = 'none'; 
-                win1.style.display = 'none';
-                win2.style.display = 'none';  
+                {{!-- win1.style.display = 'none'; --}}
+                {{!-- win2.style.display = 'none';   --}}
         }
                
 }

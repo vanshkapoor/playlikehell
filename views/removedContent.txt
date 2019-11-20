@@ -1,0 +1,12 @@
+
+                    if(score1>=10)
+                    {
+                        console.log("player 1 won!")
+                        {{!-- win1.style.display = 'block'; --}}
+                    }
+ 
+                    else if(score2>=10)
+                    {
+                        console.log("player 2 won!")
+                        {{!-- win2.style.display = 'block'; --}}
+                    }
